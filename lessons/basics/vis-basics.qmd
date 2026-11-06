@@ -7,6 +7,10 @@ webr:
   packages:
     - ggplot2
     - dplyr
+  # quarto-live's default 30 s limit is too short for some large-data exercises
+  # in the browser, and hitting it can break the R session.
+  cell-options:
+    timelimit: 300
 ---
 
 {{< include ../_setup.qmd >}}

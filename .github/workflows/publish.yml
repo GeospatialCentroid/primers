@@ -33,8 +33,17 @@ jobs:
           packages: |
             any::knitr
             any::rmarkdown
-            any::ggplot2
-            any::dplyr
+            any::tidyverse
+            any::babynames
+            any::nycflights13
+            any::gapminder
+            any::maps
+            any::mapproj
+            any::hexbin
+            any::ggrepel
+            any::ggthemes
+            any::RColorBrewer
+            any::viridis
 
       - name: Render site
         run: quarto render

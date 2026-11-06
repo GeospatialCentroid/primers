@@ -22,6 +22,7 @@
   Optional attributes on .quiz:
     type="single" | "multiple"  (default: multiple if >1 correct answer)
     correct="Great!"            (message shown on a correct submission)
+    incorrect="Try again."      (message shown on a wrong submission)
     allow-retry="true"          (let learners try again after a wrong answer)
 -->
 <script>
@@ -35,7 +36,13 @@
       (nCorrect > 1 ? "multiple" : "single");
     var inputType = type === "multiple" ? "checkbox" : "radio";
     var allowRetry = quiz.dataset.allowRetry === "true";
-    var correctMsg = quiz.dataset.correct || "Correct!";
+    // attribute text isn't processed by pandoc, so render `code` and _em_ here
+    function md(s) {
+      var esc = s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return esc.replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\b_([^_]+)_\b/g, "<em>$1</em>");
+    }
+    var correctMsg = md(quiz.dataset.correct || "Correct!");
+    var incorrectMsg = md(quiz.dataset.incorrect || "Incorrect.");
 
     var list = document.createElement("div");
     list.className = "quiz-options";
@@ -91,7 +98,7 @@
       if (!chosen.length) return;
       var ok = chosen.every(function (a) { return a.dataset.correct === "true"; }) &&
         (type === "single" || chosen.length === nCorrect);
-      var html = "<strong>" + (ok ? correctMsg : "Incorrect.") + "</strong>";
+      var html = "<strong>" + (ok ? correctMsg : incorrectMsg) + "</strong>";
       chosen.forEach(function (a) {
         if (!a._message) return;
         var m = a._message;

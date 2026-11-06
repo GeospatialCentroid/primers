@@ -17,55 +17,55 @@ website:
       - text: Lessons
         menu:
           - text: "**Primers Basics**"
-          - href: https://geocentroid.shinyapps.io/Programming-Basics/
+          - href: lessons/basics/programming-basics.qmd
             text: Programming Basics
           - href: lessons/basics/vis-basics.qmd
             text: Visualization Basics
           - text: "---"
           - text: "**Work with Data**"
-          - href: https://geocentroid.shinyapps.io/tibbles/
+          - href: lessons/transform-data/tibbles.qmd
             text: Tibbles
-          - href: https://geocentroid.shinyapps.io/isolating/
+          - href: lessons/transform-data/isolating.qmd
             text: Isolating
-          - href: https://geocentroid.shinyapps.io/deriving/
+          - href: lessons/transform-data/deriving.qmd
             text: Deriving
           - text: "---"
           - text: "**Visualize Data**"
-          - href: https://geocentroid.shinyapps.io/bar-charts/
+          - href: lessons/visualize-data/bar-charts.qmd
             text: Bar Charts
-          - href: https://geocentroid.shinyapps.io/histograms/
+          - href: lessons/visualize-data/histograms.qmd
             text: Histograms
-          - href: https://geocentroid.shinyapps.io/boxplots/
+          - href: lessons/visualize-data/boxplots.qmd
             text: Boxplots
-          - href: https://geocentroid.shinyapps.io/scatterplots/
+          - href: lessons/visualize-data/scatterplots.qmd
             text: Scatterplots
-          - href: https://geocentroid.shinyapps.io/line-graphs/
+          - href: lessons/visualize-data/line-graphs.qmd
             text: Line Graphs
-          - href: https://geocentroid.shinyapps.io/overplotting/
+          - href: lessons/visualize-data/overplotting.qmd
             text: Overplotting
-          - href: https://geocentroid.shinyapps.io/Customize/
+          - href: lessons/visualize-data/customize.qmd
             text: Customize
           - text: "---"
           - text: "**Tidy your Data**"
-          - href: https://geocentroid.shinyapps.io/Reshape-Data/
+          - href: lessons/tidy-data/reshape.qmd
             text: Reshape
-          - href: https://geocentroid.shinyapps.io/separate-columns/
+          - href: lessons/tidy-data/separate.qmd
             text: Separate
-          - href: https://geocentroid.shinyapps.io/join-datasets/
+          - href: lessons/tidy-data/join.qmd
             text: Join
           - text: "---"
           - text: "**Iterate**"
-          - href: https://geocentroid.shinyapps.io/introduction-to-iteration/
+          - href: lessons/iterate/introduction-to-iteration.qmd
             text: Introduction to Iteration
-          - href: https://geocentroid.shinyapps.io/purrr_map/
+          - href: lessons/iterate/map.qmd
             text: "purrr::map()"
           - text: "---"
           - text: "**Write Functions**"
-          - href: https://geocentroid.shinyapps.io/function-basics/
+          - href: lessons/write-functions/function-basics.qmd
             text: Function Basics
-          - href: https://geocentroid.shinyapps.io/how-to-write-a-function/
+          - href: lessons/write-functions/how-to-write-a-function.qmd
             text: How to Write a Function
-          - href: https://geocentroid.shinyapps.io/arguments/
+          - href: lessons/write-functions/arguments.qmd
             text: Arguments
     right:
       - icon: github
