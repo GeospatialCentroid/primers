@@ -30,7 +30,9 @@
     var answers = Array.prototype.slice.call(quiz.querySelectorAll(":scope > .answer"));
     if (!answers.length) return;
     var nCorrect = answers.filter(function (a) { return a.dataset.correct === "true"; }).length;
-    var type = quiz.dataset.type || (nCorrect > 1 ? "multiple" : "single");
+    // Pandoc keeps `type` as a plain HTML attribute (not data-type), so read both.
+    var type = quiz.dataset.type || quiz.getAttribute("type") ||
+      (nCorrect > 1 ? "multiple" : "single");
     var inputType = type === "multiple" ? "checkbox" : "radio";
     var allowRetry = quiz.dataset.allowRetry === "true";
     var correctMsg = quiz.dataset.correct || "Correct!";
