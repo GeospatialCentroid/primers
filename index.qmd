@@ -6,7 +6,7 @@ title-block-banner: false
 ---
 
 ::: {.hero}
-Interactive introductory R tutorials from the Geospatial Centroid. Each lesson mixes short explanations with code exercises you can run, edit, and check right in your browser. You don't need to install anything.
+Interactive introductory R tutorials. Each lesson mixes short explanations with code exercises you can run, edit, and check right in your browser. You don't need to install anything.
 :::
 
 ```{=html}
