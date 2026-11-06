@@ -1,0 +1,27 @@
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{r}
+#| include: false
+# Build-time setup for static (non-interactive) code chunks
+library(ggplot2)
+library(dplyr)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.align = "center")
+```
+
+```{webr}
+#| include: false
+# In-browser setup: mirror the original learnr checker, which always marked
+# an attempt as correct and showed the message written in the *-check chunk.
+options(webr.exercise.checker = function(label, user_code, check_code, ...) {
+  if (is.null(check_code)) return(invisible(NULL))
+  msg <- eval(parse(text = check_code))
+  # light markdown: `code` and --- (em dash), as learnr rendered them
+  msg <- gsub("`([^`]+)`", "<code>\\1</code>", msg)
+  msg <- gsub("---", "&mdash;", msg, fixed = TRUE)
+  list(
+    message = htmltools::HTML(msg),
+    correct = TRUE,
+    location = "append"
+  )
+})
+```

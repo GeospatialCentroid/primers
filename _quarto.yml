@@ -1,0 +1,91 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - lessons/**/*.qmd
+
+website:
+  title: "R Primers"
+  site-url: https://geospatialcentroid.github.io/primers/
+  repo-url: https://github.com/GeospatialCentroid/primers
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Lessons
+        menu:
+          - text: "**Primers Basics**"
+          - href: https://geocentroid.shinyapps.io/Programming-Basics/
+            text: Programming Basics
+          - href: lessons/basics/vis-basics.qmd
+            text: Visualization Basics
+          - text: "---"
+          - text: "**Work with Data**"
+          - href: https://geocentroid.shinyapps.io/tibbles/
+            text: Tibbles
+          - href: https://geocentroid.shinyapps.io/isolating/
+            text: Isolating
+          - href: https://geocentroid.shinyapps.io/deriving/
+            text: Deriving
+          - text: "---"
+          - text: "**Visualize Data**"
+          - href: https://geocentroid.shinyapps.io/bar-charts/
+            text: Bar Charts
+          - href: https://geocentroid.shinyapps.io/histograms/
+            text: Histograms
+          - href: https://geocentroid.shinyapps.io/boxplots/
+            text: Boxplots
+          - href: https://geocentroid.shinyapps.io/scatterplots/
+            text: Scatterplots
+          - href: https://geocentroid.shinyapps.io/line-graphs/
+            text: Line Graphs
+          - href: https://geocentroid.shinyapps.io/overplotting/
+            text: Overplotting
+          - href: https://geocentroid.shinyapps.io/Customize/
+            text: Customize
+          - text: "---"
+          - text: "**Tidy your Data**"
+          - href: https://geocentroid.shinyapps.io/Reshape-Data/
+            text: Reshape
+          - href: https://geocentroid.shinyapps.io/separate-columns/
+            text: Separate
+          - href: https://geocentroid.shinyapps.io/join-datasets/
+            text: Join
+          - text: "---"
+          - text: "**Iterate**"
+          - href: https://geocentroid.shinyapps.io/introduction-to-iteration/
+            text: Introduction to Iteration
+          - href: https://geocentroid.shinyapps.io/purrr_map/
+            text: "purrr::map()"
+          - text: "---"
+          - text: "**Write Functions**"
+          - href: https://geocentroid.shinyapps.io/function-basics/
+            text: Function Basics
+          - href: https://geocentroid.shinyapps.io/how-to-write-a-function/
+            text: How to Write a Function
+          - href: https://geocentroid.shinyapps.io/arguments/
+            text: Arguments
+    right:
+      - icon: github
+        href: https://github.com/GeospatialCentroid/primers
+        aria-label: GitHub repository
+  page-footer:
+    center: >
+      Adapted from the [RStudio Cloud Primers](https://github.com/rstudio-education/primers)
+      under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+      Built by the Geospatial Centroid.
+
+# Lesson pages use `live-html`, configured in lessons/_metadata.yml.
+# Keep the two in sync.
+format:
+  html:
+    theme: [cosmo, assets/styles.scss]
+    toc: true
+    toc-depth: 2
+    code-copy: true
+    include-after-body: [assets/quiz.html]
+
+execute:
+  freeze: false

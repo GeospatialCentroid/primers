@@ -1,0 +1,119 @@
+<!--
+  Lightweight multiple-choice quizzes, replacing learnr::question().
+
+  Markdown usage in a lesson:
+
+  ::: {.quiz allow-retry="true"}
+  What does the `se` argument to `geom_smooth()` do?
+
+  ::: {.answer}
+  Nothing.
+  :::
+
+  ::: {.answer correct="true"}
+  Adds or removes a standard error ribbon
+
+  ::: {.message}
+  Optional feedback shown when this answer is chosen.
+  :::
+  :::
+  :::
+
+  Optional attributes on .quiz:
+    type="single" | "multiple"  (default: multiple if >1 correct answer)
+    correct="Great!"            (message shown on a correct submission)
+    allow-retry="true"          (let learners try again after a wrong answer)
+-->
+<script>
+(function () {
+  function init(quiz, qi) {
+    var answers = Array.prototype.slice.call(quiz.querySelectorAll(":scope > .answer"));
+    if (!answers.length) return;
+    var nCorrect = answers.filter(function (a) { return a.dataset.correct === "true"; }).length;
+    var type = quiz.dataset.type || (nCorrect > 1 ? "multiple" : "single");
+    var inputType = type === "multiple" ? "checkbox" : "radio";
+    var allowRetry = quiz.dataset.allowRetry === "true";
+    var correctMsg = quiz.dataset.correct || "Correct!";
+
+    var list = document.createElement("div");
+    list.className = "quiz-options";
+    var inputs = answers.map(function (ans, ai) {
+      var message = ans.querySelector(":scope > .message");
+      if (message) message.remove();
+      ans._message = message;
+      var label = document.createElement("label");
+      label.className = "quiz-option";
+      var input = document.createElement("input");
+      input.type = inputType;
+      input.name = "quiz-" + qi;
+      input.value = ai;
+      label.appendChild(input);
+      var text = document.createElement("span");
+      text.innerHTML = ans.innerHTML;
+      // collapse a single wrapping <p> so text sits inline with the input
+      if (text.children.length === 1 && text.firstElementChild.tagName === "P") {
+        text.innerHTML = text.firstElementChild.innerHTML;
+      }
+      label.appendChild(text);
+      list.appendChild(label);
+      ans.remove();
+      return input;
+    });
+    quiz.appendChild(list);
+
+    var controls = document.createElement("div");
+    controls.className = "quiz-controls";
+    var submit = document.createElement("button");
+    submit.type = "button";
+    submit.className = "btn btn-primary btn-sm";
+    submit.textContent = "Submit Answer";
+    var retry = document.createElement("button");
+    retry.type = "button";
+    retry.className = "btn btn-outline-secondary btn-sm d-none";
+    retry.textContent = "Try Again";
+    controls.appendChild(submit);
+    controls.appendChild(retry);
+    quiz.appendChild(controls);
+
+    var feedback = document.createElement("div");
+    feedback.className = "quiz-feedback d-none";
+    quiz.appendChild(feedback);
+
+    function setDisabled(state) {
+      inputs.forEach(function (i) { i.disabled = state; });
+    }
+
+    submit.addEventListener("click", function () {
+      var chosen = inputs.filter(function (i) { return i.checked; })
+        .map(function (i) { return answers[+i.value]; });
+      if (!chosen.length) return;
+      var ok = chosen.every(function (a) { return a.dataset.correct === "true"; }) &&
+        (type === "single" || chosen.length === nCorrect);
+      var html = "<strong>" + (ok ? correctMsg : "Incorrect.") + "</strong>";
+      chosen.forEach(function (a) {
+        if (!a._message) return;
+        var m = a._message;
+        var only = m.children.length === 1 && m.firstElementChild.tagName === "P";
+        html += " " + (only ? m.firstElementChild.innerHTML : m.innerHTML);
+      });
+      feedback.innerHTML = html;
+      feedback.className = "quiz-feedback alert " + (ok ? "alert-success" : "alert-danger");
+      setDisabled(true);
+      submit.classList.add("d-none");
+      if (!ok && allowRetry) retry.classList.remove("d-none");
+    });
+
+    retry.addEventListener("click", function () {
+      inputs.forEach(function (i) { i.checked = false; });
+      setDisabled(false);
+      feedback.className = "quiz-feedback d-none";
+      retry.classList.add("d-none");
+      submit.classList.remove("d-none");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".quiz").forEach(init);
+  });
+})();
+</script>

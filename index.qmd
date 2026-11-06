@@ -1,0 +1,112 @@
+---
+title: "R Primers"
+toc: false
+page-layout: full
+title-block-banner: false
+---
+
+::: {.hero}
+Interactive introductory R tutorials from the Geospatial Centroid. Each lesson mixes short explanations with code exercises you can run, edit, and check right in your browser. You don't need to install anything.
+:::
+
+```{=html}
+<div class="lesson-section">
+  <h2>Primers Basics</h2>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/Programming-Basics/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 1</span><span class="lesson-title">Programming Basics</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="lessons/basics/vis-basics.html">
+      <span class="lesson-num">Lesson 2</span><span class="lesson-title">Visualization Basics</span>
+      <span class="lesson-badge">Runs in browser</span></a>
+  </div>
+</div>
+
+<div class="lesson-section">
+  <h2>Work with Data</h2>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/tibbles/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 1</span><span class="lesson-title">Tibbles</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/isolating/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 2</span><span class="lesson-title">Isolating</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/deriving/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 3</span><span class="lesson-title">Deriving</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+  </div>
+</div>
+
+<div class="lesson-section">
+  <h2>Visualize Data</h2>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/bar-charts/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 1</span><span class="lesson-title">Bar Charts</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/histograms/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 2</span><span class="lesson-title">Histograms</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/boxplots/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 3</span><span class="lesson-title">Boxplots</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/scatterplots/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 4</span><span class="lesson-title">Scatterplots</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/line-graphs/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 5</span><span class="lesson-title">Line Graphs</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/overplotting/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 6</span><span class="lesson-title">Overplotting</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/Customize/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 7</span><span class="lesson-title">Customize</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+  </div>
+</div>
+
+<div class="lesson-section">
+  <h2>Tidy your Data</h2>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/Reshape-Data/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 1</span><span class="lesson-title">Reshape</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/separate-columns/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 2</span><span class="lesson-title">Separate</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/join-datasets/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 3</span><span class="lesson-title">Join</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+  </div>
+</div>
+
+<div class="lesson-section">
+  <h2>Iterate</h2>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/introduction-to-iteration/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 1</span><span class="lesson-title">Introduction to Iteration</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/purrr_map/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 2</span><span class="lesson-title"><code>purrr::map()</code></span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+  </div>
+</div>
+
+<div class="lesson-section">
+  <h2>Write Functions</h2>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/function-basics/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 1</span><span class="lesson-title">Function Basics</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/how-to-write-a-function/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 2</span><span class="lesson-title">How to Write a Function</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+    <a class="lesson-card" href="https://geocentroid.shinyapps.io/arguments/" target="_blank" rel="noopener">
+      <span class="lesson-num">Lesson 3</span><span class="lesson-title">Arguments</span>
+      <span class="lesson-badge external">shinyapps.io ↗</span></a>
+  </div>
+</div>
+```
+
+::: {.callout-note appearance="simple"}
+These lessons are adapted from the [RStudio Cloud Primers](https://github.com/rstudio-education/primers) under their [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/). Some content is derived from *R for Data Science* (O'Reilly Media, Inc., © 2017 Garrett Grolemund and Hadley Wickham), used with permission. For R Markdown, see the [R Markdown lesson](https://rmarkdown.rstudio.com/lesson-1.html).
+:::

@@ -1,0 +1,9 @@
+# Applies to every lesson page. Keep in sync with `format: html` in _quarto.yml.
+engine: knitr
+format:
+  live-html:
+    theme: [cosmo, ../assets/styles.scss]
+    toc: true
+    toc-depth: 2
+    code-copy: true
+    include-after-body: [../assets/quiz.html]

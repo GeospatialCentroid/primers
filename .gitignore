@@ -1,0 +1,10 @@
+/.quarto/
+**/*.quarto_ipynb
+/_site/
+/.claude/
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+rsconnect/
